@@ -1,7 +1,7 @@
-    public static boolean predominanPares(int[] datos){
-        if(datos.length <= 0) return false;
-        int contadorPares = 0,
-            contadorImpares = 0;
-        for(int numero: datos) if(numero % 2 == 0) contadorPares++; else contadorImpares++;
-        return contadorPares >= contadorImpares;
+    public static boolean predominanPares(int[] d){
+        if(d.length <= 0) return false;
+        int a = 0,
+            b = 0;
+        for(int n:d) if(n % 2 == 0) a++; else b++;
+        return a >= b;
     }
