@@ -1,6 +1,6 @@
-    public static float promedioDeImpares(int[] datos){
-        if(datos.length <= 0) return 0;
+    public static float promedioDeImpares(int[] d){
+        if(d.length <= 0) return 0.0F;
         int a = 0;
-        for(int numero:datos) if(numero % 2 != 0) a += numero;
-        return a / datos.length;
+        for(int n:d) if(n % 2 != 0) a += n;
+        return a / d.length;
     }
