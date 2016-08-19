@@ -1,6 +1,6 @@
-    public static int menorDeLosPares(int[] datos){
-        if(datos.length <= 0) return 0;
-        int menor = datos[0];
-        for(int numero: datos) if(numero <= menor && numero % 2 == 0) menor = numero;
-        return menor;
+    public static int menorDeLosPares(int[] d){
+        if(d.length <= 0) return 0;
+        int m = d[0];
+        for(int x = d.length - 1; x >= 1; x--) if(d[x] <= m && d[x] % 2 == 0) m = d[x];
+        return m;
     }
