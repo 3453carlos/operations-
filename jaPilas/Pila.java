@@ -36,15 +36,9 @@ public class Pila {
     
     public void desempilar(){
         if(!this.esVacia()) {
-            Nodo n;
-            n = this.fin.getAnt();
+            Nodo n = this.fin.getAnt();
             this.fin = null;
             this.fin = n;
-        }
-    }
-    public void desempilar2(){
-        if(!this.esVacia()) {
-            this.fin = this.fin.getAnt();
         }
     }
     
