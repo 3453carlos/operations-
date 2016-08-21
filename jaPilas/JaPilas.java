@@ -27,8 +27,8 @@ public class JaPilas {
         p.empilar(6);
         p.empilar(6);
         System.out.println("Después de empilar:" + p);
-        p.desempilar2();
-        p.desempilar2();
+        p.desempilar();
+        p.desempilar();
         System.out.println("Después de desempilar:" + p);
         p.empilar(4);
         p.empilar(8);
@@ -37,7 +37,7 @@ public class JaPilas {
         System.out.println("Después de vaciar:" + p);
         p.empilar(22222);
         p.empilar(2);
-        p.desempilar2();
+        p.desempilar();
         System.out.println("Después de empilar después de vaciar:" + p);
     }
     
