@@ -17,6 +17,7 @@ Muchos ejercicios resueltos de Java
   * Vaciar pila
   * Tamaño de pila
   * Imprimir sus elementos
+* Suma recursiva :new:
 
 ## Cómo utilizar cada ejercicio
 Simplemente copia el método o función que desees dentro de tu clase o proyecto, y podrás usarlo.
