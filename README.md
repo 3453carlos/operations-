@@ -18,6 +18,7 @@ Muchos ejercicios resueltos de Java
   * Tamaño de pila
   * Imprimir sus elementos
 * Suma recursiva :new:
+* Multiplicación recursiva - **Multiplicar dos números sin usar ciclos ni el operador *, además de hacerlo en el menor tiempo posible** :new:
 
 ## Cómo utilizar cada ejercicio
 Simplemente copia el método o función que desees dentro de tu clase o proyecto, y podrás usarlo.
