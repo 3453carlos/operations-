@@ -1,4 +1,4 @@
-package arboles;
+package arbolesv2;
 
 public class Arbol {
 
@@ -13,23 +13,23 @@ public class Arbol {
         this.raiz.establecerPadre(raiz);
     }
 
-    public Nodo obtenerRaiz() {
+    public Nodo obtenerNodoRaiz() {
         return raiz;
     }
 
-    public void establecerRaiz(Nodo raiz) {
+    public void establecerNodoRaiz(Nodo raiz) {
         this.raiz = raiz;
     }
 
     public boolean estaVacio() {
-        return this.obtenerRaiz() == null;
+        return this.obtenerNodoRaiz() == null;
     }
 
     public void agregar(int dato) {
         System.out.println("Agregado dato " + String.valueOf(dato));
         Nodo n = new Nodo(dato);
         if (this.estaVacio()) {
-            this.establecerRaiz(n);
+            this.establecerNodoRaiz(n);
             n.establecerPadre(raiz);
         } else {
             agregar(this.raiz, n);
@@ -63,17 +63,6 @@ public class Arbol {
         }
     }
 
-    public boolean existe(Nodo n, int valor) {
-        if (n != null) {
-            if (n.obtenerDato() == valor) {
-                return true;
-            }
-            inorden(n.obtenerNodoDeLaIzquierda());
-            inorden(n.obtenerNodoDeLaDerecha());
-        }
-        return false;
-    }
-
     public void inorden(Nodo actual) {
         /*
         Primero la izquierda, luego la raíz y al final la derecha
@@ -101,19 +90,19 @@ public class Arbol {
         switch (orden) {
             case "preorden":
             default:
-                preorden(this.obtenerRaiz());
+                preorden(this.obtenerNodoRaiz());
                 break;
             case "inorden":
-                inorden(this.obtenerRaiz());
+                inorden(this.obtenerNodoRaiz());
                 break;
             case "postorden":
-                postorden(this.obtenerRaiz());
+                postorden(this.obtenerNodoRaiz());
                 break;
         }
     }
 
     public int tamaño() {
-        return tamaño(this.obtenerRaiz());
+        return tamaño(this.obtenerNodoRaiz());
     }
 
     private int tamaño(Nodo n) {
@@ -124,4 +113,32 @@ public class Arbol {
         }
     }
 
+    public int frecuencia(int busqueda) {
+        return frecuencia(this.obtenerNodoRaiz(), busqueda);
+    }
+
+    private int frecuencia(Nodo n, int busqueda) {
+        return (n == null) ? 0 : (n.obtenerDato() == busqueda) ? frecuencia(n.obtenerNodoDeLaIzquierda(), busqueda) + 1 + frecuencia(n.obtenerNodoDeLaDerecha(), busqueda) : frecuencia(n.obtenerNodoDeLaIzquierda(), busqueda) + 0 + frecuencia(n.obtenerNodoDeLaDerecha(), busqueda);
+    }
+
+    public int cantidadPares() {
+        return this.cantidadPares(this.obtenerNodoRaiz());
+    }
+
+    private int cantidadPares(Nodo n) {
+        return (n == null) ? 0 : (n.obtenerDato() % 2 == 0) ? cantidadPares(n.obtenerNodoDeLaIzquierda()) + 1 + cantidadPares(n.obtenerNodoDeLaDerecha()) : cantidadPares(n.obtenerNodoDeLaIzquierda()) + 0 + cantidadPares(n.obtenerNodoDeLaDerecha());
+    }
+
+    public int cantidadImpares() {
+        return this.tamaño() - this.cantidadPares();
+    }
+
+    public boolean existe(int busqueda) {
+        if(this.estaVacio()) return false;
+        else return this.existe(this.obtenerNodoRaiz(), busqueda);
+    }
+
+    private boolean existe(Nodo n, int busqueda) {
+        return false;
+    }
 }
