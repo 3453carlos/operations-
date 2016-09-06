@@ -1,4 +1,4 @@
-package arboles;
+package arbolesv2;
 
 public class Nodo {
 
